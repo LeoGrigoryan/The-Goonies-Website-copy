@@ -1,0 +1,808 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    transition-timing-function: linear;
+    -webkit-tap-highlight-color: transparent;
+}
+
+*::selection {
+    background: #fff;
+    color: #000;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+img {
+    user-select: none;
+}
+
+body {
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    z-index: 30;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(#000 0%, transparent 100%);
+}
+
+header nav ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    gap: 5vw;
+    width: 100%;
+}
+
+header :is(nav, .BallParent) {
+    width: 80%;
+}
+
+header nav {
+    padding: 2vw 0 0 0;
+}
+
+header .BallParent {
+    padding: .3vw 1.1vw;
+}
+
+header .BallParent .Ball {
+    width: .4vw;
+    height: .4vw;
+    border-radius: 50%;
+    position: relative;
+    background: #fff;
+    box-shadow: 0 0 10px #000;
+    opacity: 0;
+    transition: .15s;
+}
+
+header nav ul li {
+    text-decoration: none;
+    font: 100 .9vw Krona;
+    color: #fff;
+    text-shadow: 0 0 10px #000;
+    cursor: pointer;
+}
+
+.Welcome {
+    width: 100%;
+    height: 340vh;
+}
+
+.Coins-Key img {
+    position: absolute;
+    left: var(--l);
+    top: var(--t);
+    rotate: var(--r);
+    translate: -50% -50%;
+    width: var(--w);
+    transition: .05s linear;
+}
+
+
+.Welcome .sticky-cont {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.Welcome .BesideElement {
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: url(pics/Main-Background.jpg) no-repeat 100% 50% / cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Welcome .leaves {
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+    top: -10%;
+    transition: .1s linear;
+}
+
+.Welcome .name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: .5vw;
+}
+
+.Welcome .name img {
+    width: 28vw;
+}
+
+.Welcome .name h2 {
+    font: 100 3.3vw Abuget, Krona;
+    color: #fff;
+}
+
+.Welcome .mouse {
+    position: absolute;
+    bottom: 1%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 3.5vw;
+}
+
+.Welcome .Plot {
+    position: absolute;
+    left: 50%;
+    top: 65%;
+    translate: -50% -50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 38837;
+}
+
+.Welcome .Plot h1 {
+    color: #fff;
+    font: 1.8vw Krona;
+}
+
+.Welcome .Plot p {
+    font: 100 .7vw Krona;
+    color: #fff;
+    line-height: 1.75vw;
+    position: relative;
+    top: 4vw;
+    letter-spacing: .1vw;
+}
+.Welcome .linePar {
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    height: 15vw;
+}
+
+.Welcome .Plot .line,
+footer .linePar .line {
+    width: .03vw;
+    height: 0;
+    background: #fff;
+}
+
+.BlackWindow {
+    background: #000;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 372;
+    opacity: 0;
+}
+
+.Goonies {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    transition: .15s;
+    justify-content: center;
+    align-items: center;
+}
+
+.Goonies .item {
+    width: calc(100% / 4);
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    align-items: end;
+    justify-content: start;
+    /* padding: 2vw 3vw; */
+    position: relative;
+    transition: .4s;
+}
+
+.Goonies .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 20s;
+}
+
+.Goonies .item:hover {
+    width: 50%;
+}
+.Goonies .item:hover img {
+    scale: 1.45;
+}
+
+.Goonies .item:hover::after {
+    background: #00000016;
+}
+
+.Goonies .item::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000a4;
+    transition: .5s;
+}
+
+.Goonies .item .text {
+    position: absolute;
+    left: 3vw;
+    bottom: 3vw;
+    display: flex;
+    flex-direction: column;
+    gap: .5vw;
+    translate: 0 200%;
+    transition: .4s;
+    text-shadow: 0 0 10px #000;
+}
+
+.Goonies .item:hover .text {
+    translate: none;
+}
+
+.Goonies .item .text h2 {
+    font: bold 2vw Krona;
+    color: #fff;
+}
+
+.Goonies .item .text p {
+    font: bold 1vw Krona;
+    color: #fff;
+}
+
+.OpenMap {
+    position: fixed;
+    bottom: 5vw;
+    left: 5vw;
+    z-index: 52;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.OpenMap::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    translate: -50% -50%;
+    width: 2vw;
+    height: 2vw;
+    border-radius: 50%;
+    background: transparent;
+    border: .15vw solid #fff;
+    animation: radius 1.2s linear infinite;
+    opacity: .7;
+}
+
+.OpenMap img {
+    width: 1.5vw;
+}
+.MapParent button {
+    transition: 1.2s linear;
+}
+.MapParent button,
+.Gallery .TextParent .X-Button {
+    position: absolute;
+    left: 85%;
+    top: 15%;
+    translate: -50% -50%;
+    background: #000;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    color: #fff;
+    font: 1vw sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 281 !important;
+    transition: 1s;
+}
+
+.MapParent button:hover {
+    rotate: 360deg;
+}
+
+.MapParent .text {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 88vw;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 66;
+}
+
+.MapParent .text h2 {
+    font: 550 1.2vw Krona;
+}
+
+.MapParent .text p {
+    font: bold 1.3vw Krona;
+}
+
+.Coins-Key {
+    width: 100%;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    border: 1vw solid #000;
+}
+
+.Coins-Key h2 {
+    position: absolute;
+    translate: -50% -50%;
+    top: 65%;
+    left: 50%;
+    color: #fff;
+    font: 550 2.4vw Krona;
+    opacity: 0;
+    transition: .15s linear;
+}
+
+.MapParent {
+    position: fixed;
+    left: 0;
+    top: 0;
+    clip-path: circle(0% at 5.75% 87.5%);
+    width: 100vw;
+    height: 100vh;
+    background: url(pics/Map-background.jpg) no-repeat bottom / cover;
+    z-index: 50;
+    overflow: hidden;
+    transition: clip-path 1s;
+    z-index: 60;
+}
+
+.MapParent .all {
+    position: absolute;
+    left: 20%;
+    top: -50%;
+    transition: all .3s linear;
+    opacity: 0;
+    width: 100vw;
+    /* transition: opacity 1s; */
+}
+
+.MapParent img {
+    filter: brightness(60%);
+    width: 100%;
+}
+
+.MapParent .all .window {
+    position: absolute;
+    display: flex;
+    left: var(--pul);
+    top: var(--put);
+    width: max-content;
+}
+
+.MapParent .all .window .dot {
+    width: 1.3vw;
+    height: 1.3vw;
+    border-radius: 50%;
+    background: rgb(112, 0, 0);
+    position: relative;
+    cursor: pointer;
+}
+
+.MapParent .all .window .dot::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 1;
+    border-radius: 50%;
+    background: rgb(112, 0, 0);
+    animation: Pulse 1.4s linear infinite;
+}
+
+.MapParent .all .window .context {
+    position: absolute;
+    top: -7vw;
+    left: 130%;
+    /* padding: .5vw 0; */
+    height: 7vw;
+    background: #000;
+    /* width: max-content; */
+    padding: 0;
+    font: 500 1.2vw Krona;
+    color: #967D59;
+    text-shadow: 0 0 2px #967D59;
+    box-shadow: 0 0 3px #000;
+    width: 0;
+    overflow: hidden;
+    transition: .65s;
+}
+
+.MapParent .all .window .context p {
+    position: absolute;
+    width: max-content;
+    left: 1vw;
+    top: 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.MapParent .all .window .context img {
+    width: 4vw;
+}
+
+.All-About {
+    display: flex;
+    width: 99%;
+    /* box-shadow: 0 0 10px 10px #000 inset; */
+    height: 100vh;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.All-About img {
+    width: 10vw;
+}
+
+.All-About .item {
+    width: calc(100% / 4);
+    height: 50%;
+    box-shadow: 0 0 1px #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: .8vw;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.All-About .item h2 {
+    font: 2.65vw Krona;
+}
+
+.All-About .item img {
+    width: var(--sh);
+    opacity: .25;
+}
+
+.All-About .item .text {
+    position: absolute;
+    left: 2vw;
+    bottom: 2vw;
+    display: flex;
+    flex-direction: column;
+    gap: .8vw;
+}
+
+.All-About .item .text h3 {
+    font: 1.1vw Krona;
+    letter-spacing: .05vw;
+}
+
+.All-About .item .text p {
+    font: .75vw Krona;
+    letter-spacing: .1vw;
+}
+
+.All-About .item .ScrollObject {
+    position: relative;
+    transition: .05s linear;
+}
+
+.All-About .item .HoverElement {
+    transition: opacity .5s ease-in;
+}
+
+.All-About .item:hover .HoverElement {
+    opacity: .8;
+}
+
+.All-About .item .HoverText {
+    transition: scale .5s ease-in;
+}
+
+.All-About .item:hover .HoverText {
+    scale: 1.1;
+}
+
+.Skull-People {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Skull-People .Skull {
+    width: 11vw;
+    opacity: .1;
+    transition: .05s linear;
+}
+
+.Skull-People .People {
+    position: absolute;
+    top: 50%;
+    opacity: .9;
+    filter: blur(2px);
+    width: 85%;
+    transition: .05s linear;
+}
+
+.Gallery {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 .25vw;
+    box-shadow: 0 0 1px #fff;
+    overflow: hidden;
+}
+
+.Gallery .Pictures {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .25vw;
+    align-content: center;
+    align-items: start;
+    top: 21%;
+}
+
+.Gallery .noxes {
+    background: var(--p) no-repeat center / cover;
+    height: var(--hon);
+    width: var(--won);
+    position: relative;
+    transition: 1s cubic-bezier(1, -0.01, .83, .7);
+    opacity: 0;
+}
+.Gallery .Pictures > .noxes:nth-child(1) {
+    scale: .2;
+}
+.Gallery .Pictures > .noxes:nth-child(2) {
+    scale: .4; translate: -120%;
+}
+.Gallery .Pictures .together > .noxes:nth-child(1) {
+    translate: 0 100%;
+}
+.Gallery .Pictures .together > .noxes:nth-child(2) {
+    translate: -40% -75%;
+    scale: .8;
+}
+.Gallery .noxes:nth-child(3) {
+    scale: 1; translate: 0 120%;
+}
+.Gallery .noxes:nth-child(3) {
+    scale: .75; translate: -45% -60%;
+}
+.Gallery .noxes:nth-child(4) {
+    scale: .7; translate: 0 60%;
+}
+.Gallery .noxes:nth-child(5) {
+    scale: .6; translate: 60% 0;
+}
+.Gallery .noxes:nth-child(6) {
+    scale: .5;
+}
+.Gallery .noxes:nth-child(7) {
+    scale: .4;
+}
+.Gallery .noxes:nth-child(8) {
+    scale: .2;
+}
+.Gallery .noxes:nth-child(9) {
+    translate: 0 -75%;
+}
+.Gallery .noxes:nth-child(10) {
+    scale: .7;
+}
+.Gallery .together {
+    display: flex;
+    flex-direction: column;
+    width: 12.5%;
+    height: 27.5%;
+    gap: .25vw;
+}
+
+.Gallery .TextParent {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    gap: .8vw;
+}
+
+.Gallery .TextParent h2 {
+    font: 100 2.2vw Krona;
+    color: #fff;
+    text-shadow: 0 0 5px #000;
+}
+
+.Gallery .TextParent button {
+    background: #000;
+    color: #fff;
+    outline: none;
+    border: none;
+    padding: .5vw .6vw;
+    width: max-content;
+    font: bold .95vw system-ui;
+    letter-spacing: .05vw;
+    cursor: pointer;
+}
+
+.Gallery .TextParent .abBut {
+    position: absolute;
+    bottom: 0;
+    background: #000;
+    color: #fff;
+    padding: .5vw .7vw;
+    font: bold .95vw system-ui;
+    letter-spacing: .05vw;
+    cursor: pointer;
+}
+
+.Gallery .TextParent .MainText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .5vw;
+    cursor: pointer;
+    transition: .4s linear;
+}
+
+.Gallery .TextParent .X-Button {
+    top: 50%;
+    left: 50%;
+    scale: 0;
+    transition: .7s cubic-bezier(1, -0.01, .83, .7);
+}
+.LinesParent {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 2;
+    gap: 45vw;
+    transition: none;
+}
+.LinesParent .line {
+    width: 0.1vw;
+    height: 100%;
+    background: #ffffff32;
+    transition: .4s;
+}
+footer {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.3vw;
+    color: #fff;
+    width: 100%;
+}
+footer h2 {
+    font: 2.5vw Krona;
+    position: relative;
+    top: 4vw;
+    opacity: 0;
+}
+footer p {
+    font: 1.1vw system-ui;
+    opacity: 0;  
+}
+footer button {
+    position: relative;
+    top: 2.5vw;
+    background: transparent;
+    outline: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font: .85vw Krona;
+    opacity: 0;
+}
+footer span {
+    position: absolute;
+    bottom: 3vw;
+    font: .8vw system-ui;
+    letter-spacing: .1vw;
+}
+footer .linePar {
+    width: 100%;
+    height: 30%;
+    position: absolute;
+    top: 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+footer .linePar .line {
+    height: 100%;
+}
+@keyframes Pulse {
+    0% {
+        scale: 0;
+        opacity: 1;
+    }
+
+    100% {
+        scale: 10;
+        opacity: 0;
+    }
+}
+
+@keyframes radius {
+    0% {
+        scale: 1;
+        opacity: .7;
+    }
+
+    100% {
+        scale: 2.5;
+        opacity: 0;
+    }
+}
+
+@font-face {
+    font-family: Abuget;
+    src: url(Abuget.ttf);
+}
+
+@font-face {
+    font-family: Krona;
+    src: url(KronaOne-Regular.ttf);
+}
